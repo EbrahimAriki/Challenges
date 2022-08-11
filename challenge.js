@@ -671,3 +671,4 @@ console.log(Paircount1([1,3,1,3,1],4) ,"final")
 console.log(Paircount1([1,2,3,2,1],5),"final")
 console.log(Paircount1([1,1,34,4,55,10,10,10],20),"final")
 console.log(Paircount1([1,1,34,4,55,10,10,10,8,12],20),"final")
+// hgh 
