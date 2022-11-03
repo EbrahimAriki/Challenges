@@ -28,14 +28,15 @@ function numberSquares(n) {
     var result = 0
 
     for (let i = 0; i <= n; i++) {
-        result += Math.pow(i, 2)
-        //result += i**2
-        //result  += result ;
+        result = i**2 + result
+        // result  += result ;
+        // result += Math.pow(i, 2)
+        console.log(result)
 
     }
     return result
 }
-console.log(numberSquares(3))
+console.log(numberSquares(2))
 
 
 
@@ -80,6 +81,7 @@ console.log(numberSquares(3))
 // ;
 // console.log(addDigits('96'))
 // //console.log((b))
+
 
 
 
@@ -256,6 +258,7 @@ var addDigits = function (num) {
 
         else {
             var d = c.length
+            console.log(c)
             console.log(b);
             console.log(c.length)
             console.log(d) //just to be sure 
@@ -291,7 +294,7 @@ var addDigits = function (num) {
     else { return parseInt(num) }
     return s
 };
-console.log(addDigits("3"))
+console.log(addDigits("3697"))
 
 
 
@@ -463,8 +466,8 @@ var checkZeroOnes = function (s) {
 
     }
 
-    return longestones + "ones"  + " " + "zeros" + longestzeros
- 
+    return longestones + "ones" + " " + "zeros" + longestzeros
+
 
 };
 console.log(checkZeroOnes("0000001111010101011111111111"));
@@ -486,7 +489,7 @@ function fizzBuzz(num) {
     let arr = []
     for (i = 1; i <= num; i++)
 
-    
+
         if (i % 3 == 0 && i % 5 == 0) {
             arr.push("FizzBuzz")
         }
@@ -517,7 +520,7 @@ console.log(fizzBuzz(15))
 // let arr = [1,2,3,2,1]
 // let B = 5
 // function Paircount(arr , B) {
-    
+
 //     // let arr = [1,2,3,2,1]
 //     // let B = 5
 //     var result = 0 
@@ -540,29 +543,30 @@ console.log(fizzBuzz(15))
 // console.log(Paircount([1,2 ,3,2, 1], 2))
 
 
-function Paircount(arr , B) { ///this is working with 2 for loop 
-    
+function Paircount(arr, B) { ///this is working with 2 for loop 
+
     // let arr = [1,2,3,2,1]
     // let B = 5
-    var result = 0 
-console.log(arr.length)
-console.log(B)
+    var result = 0
+    console.log(arr.length)
+    console.log(B)
 
-    for ( i = 0; i < arr.length; i++){
-         
-          for (j = i+1 ; j < arr.length ; j++) {
-           if (arr[i] + arr[j] == B){
-            result  = result + 1
-            // result  = arr[i] +arr[j]
-            console.log(result)
-           }}
+    for (i = 0; i < arr.length; i++) {
 
-    } 
-    return result 
+        for (j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] == B) {
+                result = result + 1
+                // result  = arr[i] +arr[j]
+                console.log(result)
+            }
+        }
+
+    }
+    return result
 
     console.log(arr)
 }
-console.log(Paircount([1,3,1,3,1],4))
+console.log(Paircount([1, 3, 1, 3, 1], 4))
 
 // [1,1,34,4,55,10,10,8,12,1], 20
 //[1,1,34,4,55,10,10,10,8,12], 20
@@ -571,48 +575,49 @@ console.log(Paircount([1,3,1,3,1],4))
 // [1,3,1,3,1],4
 
 
-function Paircount1(arr , B) { ///this is not working with 1 for loop 
-    
+function Paircount1(arr, B) { ///this is not working with 1 for loop 
+
     // let arr = [1,2,3,2,1]
     // let B = 5
-    var result = 0 
-console.log(arr.length)
-console.log(B)
+    var result = 0
+    console.log(arr.length)
+    console.log(B)
 
-    for ( i = 0; i < arr.length; i++){
+    for (i = 0; i < arr.length; i++) {
         //  var k = i
         //   for (j = i+1 ; j < arr.length ; j++) {
-           if (arr[i] + arr[i+1] == B){
-            result  = result + 1
-            if (arr[arr.length-i] + arr[arr.length -2] == B){
+        if (arr[i] + arr[i + 1] == B) {
+            result = result + 1
+            if (arr[arr.length - i] + arr[arr.length - 2] == B) {
                 // if (arr[k-1] + arr[k] == B){
-                result  = result + 1}
+                result = result + 1
+            }
             // result  = arr[i] +arr[j]
             console.log(result)
-           }
+        }
 
-    } 
-    return result 
+    }
+    return result
 
     console.log(arr)
 }
-console.log(Paircount1([1,3,1,3,1],4) ,"final")
-console.log(Paircount1([1,2,3,2,1],5),"final")
-console.log(Paircount1([1,1,34,4,55,10,10,10],20),"final")
-console.log(Paircount1([1,1,34,4,55,10,10,10,8,12],20),"final")
+console.log(Paircount1([1, 3, 1, 3, 1], 4), "final")
+console.log(Paircount1([1, 2, 3, 2, 1], 5), "final")
+console.log(Paircount1([1, 1, 34, 4, 55, 10, 10, 10], 20), "final")
+console.log(Paircount1([1, 1, 34, 4, 55, 10, 10, 10, 8, 12], 20), "final")
 
 
 // [1,3,3,1],4
 
 // The solution of Mr Ammmar 
-let solve = function(A, B){
+let solve = function (A, B) {
     let count = 0;
     let pivot = 0
-    for(let i = 0; pivot !== A.length - 1; i++) {
-        if(A[pivot] + A[i] === B && pivot !== i) {
+    for (let i = 0; pivot !== A.length - 1; i++) {
+        if (A[pivot] + A[i] === B && pivot !== i) {
             count += 1;
         }
-        if(i === A.length - 1) {
+        if (i === A.length - 1) {
             pivot += 1;
             i = pivot;
         }
@@ -621,12 +626,12 @@ let solve = function(A, B){
 }
 
 
-console.log(solve([1,2,3,2,1],5));
-console.log(solve([1,1,1],2));
-console.log(solve([1,1,3],4));
-console.log(solve([1,1,34,4,55,10,10,10],20));
-console.log(solve([1,1,34,4,55,10,10,10,8,12],20));
-console.log(solve([1,1,12,8,34,4,55,10,10,10,8,12],20));
+console.log(solve([1, 2, 3, 2, 1], 5));
+console.log(solve([1, 1, 1], 2));
+console.log(solve([1, 1, 3], 4));
+console.log(solve([1, 1, 34, 4, 55, 10, 10, 10], 20));
+console.log(solve([1, 1, 34, 4, 55, 10, 10, 10, 8, 12], 20));
+console.log(solve([1, 1, 12, 8, 34, 4, 55, 10, 10, 10, 8, 12], 20));
 // solve([1,2,3,2,1],5)
 // 2
 // solve([1,1,1],2)
@@ -644,31 +649,403 @@ console.log(solve([1,1,12,8,34,4,55,10,10,10,8,12],20));
 
 
 
-function Paircount1(arr , B) { ///this is not working with 1 for loop 
+function Paircount1(arr, B) { ///this is not working with 1 for loop 
 
-    var result = 0 
-console.log(arr.length)
-console.log(B)
+    var result = 0
+    console.log(arr.length)
+    console.log(B)
 
-    for ( i = 0; i < arr.length; i++){
+    for (i = 0; i < arr.length; i++) {
         //  var k = i
         //   for (j = i+1 ; j < arr.length ; j++) {
-           if (arr[i] + arr[i+1] == B){
-            result  = result + 1
-            if (arr[arr.length-i] + arr[arr.length -i-1] == B){
+        if (arr[i] + arr[i + 1] == B) {
+            result = result + 1
+            if (arr[arr.length - i] + arr[arr.length - i - 1] == B) {
                 // if (arr[k-1] + arr[k] == B){
-                result  = result + 1}
+                result = result + 1
+            }
             // result  = arr[i] +arr[j]
             console.log(result)
-           }
+        }
 
-    } 
-    return result 
+    }
+    return result
 
     console.log(arr)
 }
-console.log(Paircount1([1,3,1,3,1],4) ,"final")
-console.log(Paircount1([1,2,3,2,1],5),"final")
-console.log(Paircount1([1,1,34,4,55,10,10,10],20),"final")
-console.log(Paircount1([1,1,34,4,55,10,10,10,8,12],20),"final")
+console.log(Paircount1([1, 3, 1, 3, 1], 4), "final")
+console.log(Paircount1([1, 2, 3, 2, 1], 5), "final")
+console.log(Paircount1([1, 1, 34, 4, 55, 10, 10, 10], 20), "final")
+console.log(Paircount1([1, 1, 34, 4, 55, 10, 10, 10, 8, 12], 20), "final")
 // hgh 
+
+
+
+//15.08.22//
+//https://leetcode.com/problems/length-of-last-word/
+
+
+function charCount(myChar, str) {
+    let sentence = "Ebrahim Ali  ibb Yemen  ";
+    // let a = sentence.length
+    // console.log(a)
+
+    console.log(sentence.length)
+    sentence = sentence.trim()
+    console.log(sentence.length)
+    const newarray = sentence.split(" ");
+    console.log(newarray)
+    let b = newarray.length
+    console.log(b)
+    LastWord = newarray[newarray.length - 1];
+    console.log(LastWord);
+    console.log(LastWord.length);
+
+
+    // if (LastWord!== " ") {
+    //     LastWordLength = LastWord.length
+    // }
+
+    // else{
+    //     LastWordLength = LastWord.length
+    // }
+
+    return (LastWord.length)
+
+
+}
+console.log(charCount())
+
+
+// function charCount(myChar, str) {
+//     let sentence = "Ebrahim Ali  ibb     ";
+//     // let a = sentence.length
+//     // console.log(a)
+//     console.log(sentence.length)
+//     sentence = sentence.trim()
+//     console.log(sentence.length)
+//     const newarray = sentence.split(" ");
+//     console.log(newarray)
+//     let b = newarray.length  
+//      console.log(b)
+//     LastWord = newarray[newarray.length - 1];
+//     console.log(LastWord);
+//     console.log(LastWord.length);
+//     if (LastWord!== " ") {
+//         LastWordLength = LastWord.length
+//     }
+
+//     else{
+//         LastWordLength = LastWord.length
+//     }
+
+//     let empty = []  // with counter
+//     //     let str1 = 'JavaScript,Python,C++,PHP';
+
+//     // const split_string = str1.split(",");
+//     // console.log(split_string)
+
+//     for (i = 0; i <= b; i++)
+//         if (newarray[i] === myChar) {
+//             console.log(newarray[i])
+//             empty.push(newarray[i])
+
+//         }
+//     // let s = empty.length
+//     // console.log(s)
+//     return (empty.length)
+
+
+// }
+// console.log(charCount("i", "EbrahimAliiibb"))
+
+
+
+
+
+//16.08.2022
+///https://leetcode.com/problems/happy-number/
+
+function isHappy(n) {
+    var result = 0
+    var numarr = n.toString().split("")
+    console.log(numarr)
+    let iteration = 0
+
+    for (let i = 0; i <= numarr.length; i++) {
+        if (iteration <= 5000) {
+            for (let i = 0; i < numarr.length; i++) {
+                result += Math.pow(numarr[i], 2)
+                console.log(result, "result")
+                var tempnum = result
+                console.log(tempnum, "temp")
+            }
+            if (result !== 1) {
+                numarr = result.toString().split("")
+                console.log(numarr, "temp")
+                i = 0
+                result = 0
+                ++iteration
+                console.log(iteration, "iteration")
+            }
+            else return true
+        }
+        else {
+            return false
+        }
+    }
+}
+console.log(isHappy(19))
+
+
+//https://leetcode.com/problems/majority-element/
+
+function majority(nums) {
+    var result = 0
+    var nums = [1, 2, 3, 2, 1, 1]
+    console.log(nums)
+    for (let i = 0; i < nums.length; i++) {
+
+        /////////// didnt finish this
+    }
+}
+console.log(majority(19))
+
+
+
+//https://leetcode.com/problems/isomorphic-strings/
+var isIsomorphic = function (s, t) {
+    console.log(s.length)
+    console.log(t.length)
+
+};
+console.log(isIsomorphic("hi", "bi"))
+
+
+
+//22.08.2022
+// https://leetcode.com/problems/remove-element/
+var removeElement = function (nums, val) {
+    let tempk = 0
+    let k = 0
+    console.log(nums.length)
+    for (var i = 0; i < nums.length; i++) {
+        console.log("hi", nums[i])
+        if (nums[i] === val) {
+            console.log(nums[i])
+            nums.splice(i, 1)
+            i = i - 1
+            nums.splice(nums.length, 0, '_')
+            tempk++
+            k = nums.length - tempk
+            console.log(k)
+        }
+    }
+    console.log("k=", k, "nums", nums)
+    return (k)
+};
+console.log(removeElement([1, 2, 3, 2, 1, 1], 2))
+console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2))
+console.log(removeElement([3, 2, 2, 3], 3))
+
+// https://leetcode.com/problems/remove-element/
+var removeElement = function (nums, val) {
+    let tempk = 0
+    let k = 0
+
+    for (var i = 0; i < nums.length; i++) {
+        if (nums[i] === val) {
+            nums.splice(i, 1)
+            i = i - 1
+            nums.splice(nums.length, 0, '_')
+            tempk++
+            k = nums.length - tempk
+
+        }
+    }
+    console.log("k2=", k, "nums", nums)
+    return (k, nums)
+};
+console.log(removeElement([3, 2, 2, 3], 3))
+
+
+
+//22.08.2022
+//leetcode.com/problems/move-zeroes/submissions/
+var moveZeroes = function (nums) {
+    let tempk = 0
+    let k = 0
+
+    for (var i = 0; i < nums.length; i++) {
+        // nums.map ( (i)=> {
+        if (nums[i] === 0) {
+            nums.splice(i, 1)
+            i = i - 1
+            nums.splice(nums.length, 0, '_')
+        }
+    }
+    for (var i = 0; i < nums.length; i++) {
+        if (nums[i] == '_') {
+            nums.splice(i, 1)
+            i = i - 1
+            nums.splice(nums.length, 0, 0)
+        }
+    }
+    // const newNums =nums.map ( (i)=> {
+    //     (nums[i] === '_') ?
+    //   nums.splice(nums.length,0,0) 
+    //     : tempk++
+    // } )
+    return (nums)
+};
+console.log(moveZeroes([3, 0, 0, 2, 0, 3]))
+
+
+//23.08.2022 // read about stack and queue
+//https://leetcode.com/problems/valid-parentheses/
+var isValid = function (s) {
+    // last in last out 
+    let tempk = 0
+    let k = s.split("")
+    console.log(k)
+    var brackets = ['(', ')', '{', '}', '[', ']']
+
+    let resultArray = []
+    let rev = k.reverse();
+    console.log(s.length)
+    console.log(s)
+    console.log(rev)
+
+    for (var i = 0; i < s.length; i++) {
+        if (s[i] === brackets[0] && s[i + 1] === brackets[1 || 3 || 5]) {
+            resultArray.push(brackets[i], brackets[i + 1])
+            console.log(brackets[i], "result")
+        }
+    }
+    console.log(resultArray)
+    return (resultArray)
+};
+console.log(isValid("(]"))
+
+
+
+
+// //leetcode.com/problems/palindrome-number/ 
+function reverseString() {
+    number = 656
+    let str = number.toString()
+    // console.log(str)
+    // let  str = "" + a + ""
+    let com = str.split("").reverse().join("")
+    console.log(com)
+
+
+    if (com === str) {
+        return true
+    }
+    else {
+        return false
+    }
+    //return str.split("").reverse().join("")
+}
+console.log(reverseString());
+
+
+
+
+
+// random number generator
+function random() {
+    let randArray = [];
+    for (let i = 0; i < 10; i++) {
+        number = Math.floor(Math.random() * 20) - 10
+        randArray.push(number)
+    }
+    console.log(randArray)
+    return this.number
+}
+console.log(random());
+
+//or
+function random1(min, max) {
+    let arr = [15, 16, 18, 25, 7, 13, 10, 8, 19, 7]
+    arr.sort()
+    let randArray = [];
+    for (let i = 0; i < 10; i++) {
+        number = Math.floor(Math.random() * (max - min)) + min
+        randArray.push(number)
+    }
+    randArray = randArray
+    console.log(randArray)
+    console.log(randArray.sort(), "Sorted array"); // dosent work with negative num
+    console.log(arr.sort((a, b) => b - a), "sbt arr sorted")
+
+    return number
+}
+
+console.log(random1(1, 20));
+
+
+
+//26.08.2022
+//https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
+
+// var removeDuplicates = function (nums, val) {
+//     let tempk = 0
+//     let k = 0
+//     console.log(nums.length)
+//     for (var j = 0; j < nums.length; j++) {
+//         if (nums[j] == "_") {
+//             return ("k=", k, "nums", nums)
+//         }
+//         else {
+//             var tempi = nums[j]
+//         }
+//         for (var i = 0; i < nums.length; i++) {
+//             if (tempi == nums[i + 1]) {
+//                 console.log(nums[i])
+//                 nums.splice(i, 1)
+//                  i = i - 1
+//                 nums.splice(nums.length, 0, '_')
+//                 tempk++
+//                 k = nums.length - tempk
+//                 console.log(k)
+//                 console.log(nums)
+//             }
+//         }
+//     }
+//     console.log("k=", k, "nums", nums)
+//     return (k)
+// };
+// console.log(removeDuplicates([1, 2, 3, 2, 1]))
+
+
+var removeDuplicates1 = function(nums) {
+    let res = [];
+    let k = 0 
+    let b = 0
+    for(var i = 0; i < nums.length; i++) {
+        if(!res.includes(nums[i])) {
+            res.push(nums[i]) 
+            k++ ; 
+        console.log(k)
+        }
+         
+        else{
+        b++
+         //res.splice(res.length, 0, '_')
+console.log(res)}
+        // res.push("_") 
+    }
+    console.log("k=", k, "res", res)
+    console.log(i)
+
+    if (nums.length == nums.length){
+        res.splice(res.length, 0, '_')
+
+    }
+    return k
+  //  return restruct(res)[0];
+};
+console.log(removeDuplicates1([1,3 ,1 ,2, 3, 2, 1]))
